@@ -14,6 +14,15 @@ function main(){
 	}
 }
 
+function example(){
+	Papa.parse("https://hookandline.davidmine.com/assets/spiderman.csv", {
+		download: true,
+		complete: function(results) {
+			console.log(results);
+		}
+	});
+}
+
 /*
 input : 2d array (diagonal 2d array of instruction set)
 output : string (readable instruction set)
