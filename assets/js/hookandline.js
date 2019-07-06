@@ -18,7 +18,18 @@ function example(){
 	Papa.parse("https://hookandline.davidmine.com/assets/spiderman.csv", {
 		download: true,
 		complete: function(results) {
-			console.log(results);
+			var json = JSON.stringify(results.data);
+			var blob = new Blob([json], {type: "octet/stream"});
+			var url = window.URL.createObjectURL(blob);
+			var a = document.createElement("a");
+
+			document.body.appendChild(a);
+			a.style = "display: none";
+			a.href = url;
+			a.download = "spider.csv";
+			a.click();
+			window.URL.revokeObjectURL(url);
+			//console.log(results);
 		}
 	});
 }
