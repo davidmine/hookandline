@@ -26,10 +26,9 @@ function example(){
 			document.body.appendChild(a);
 			a.style = "display: none";
 			a.href = url;
-			a.download = "spider.csv";
+			a.download = "spiderman.csv";
 			a.click();
 			window.URL.revokeObjectURL(url);
-			//console.log(results);
 		}
 	});
 }
