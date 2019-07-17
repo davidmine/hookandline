@@ -20,9 +20,11 @@
 			<li>Enjoy!</li>
 		</ol>
 		<div>
-			<input id="visualdatafile" type="file" />
+			<input id="visualdatafile" type="file" /><br /><button onclick="generateFromFile()">Generate Instructions</button><br /><br />
+			<span>-- or --</span><br /><br />
+			<textarea id="visualdatastring"></textarea><br /><button onclick="generateFromString()">Generate Instructions</button>
 		</div>
-		<button onclick="main()">Generate Instructions</button>
+		
 		<div id="outputstring"></div>
 	</body>
 </html>

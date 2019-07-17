@@ -1,4 +1,4 @@
-function main(){
+function generateFromFile(){
 	var file;
 	var fileInput = document.getElementById("visualdatafile");
 
@@ -8,10 +8,20 @@ function main(){
 		new Papa.parse(file, {
             skipEmptyLines: true,
 			complete: function(results) {
-                document.getElementById("outputstring").innerHTML = generateInstructions(loopGrid(results.data));
+				console.log(results.data);
+                //document.getElementById("outputstring").innerHTML = generateInstructions(loopGrid(results.data));
 			}
 		});
 	}
+}
+
+function generateFromString() {
+	var input = document.getElementById("visualdatastring").value;
+	input = input.trim().split("\n");
+	for (var i = 0; i < input.length; i++) {
+		input[i] = input[i].split(",");
+	}
+	document.getElementById("outputstring").innerHTML = generateInstructions(loopGrid(input));
 }
 
 function example(){
